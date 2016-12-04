@@ -1,8 +1,7 @@
 
 fabPack
 ---
-Packaging Utility for Salesforce Professionals
-Fabrice Cathala - 14 May 2016
+Packaging Utility for Salesforce Professionals - Fabrice Cathala - 14 May 2016
 
 fabPack is a simple but efficient packaging utility that simplify moving meta-data packages in between Salesforce orgs.
 Alternatively, fabPack is also ideal to build-up a features library.
