@@ -1,0 +1,6 @@
+# Windows icon display settings
+desktop.ini
+
+# Subblime project files
+*.sublime-project
+*.sublime-workspace
