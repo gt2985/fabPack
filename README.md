@@ -1,6 +1,5 @@
+#<img src="https://cloud.githubusercontent.com/assets/349381/21577558/dda8eeae-cf56-11e6-8198-abc0ce0d2a27.png"/> fabPack
 
-fabPack
----
 Packaging Utility for Salesforce Professionals - Fabrice Cathala - 14 May 2016
 
 **fabPack** is a simple but efficient packaging utility that simplify moving meta-data packages in between Salesforce orgs. It's built around Salesforce's ANT migration toolkit that it enhances with a old-fashioned but efficient DOS GUI. 
@@ -13,3 +12,7 @@ fabPack is also ideal to build a packages library.
 > *Ben N, Senior Salesforce Developer*
 
 Find more details at https://github.com/fcathala/fabPack/wiki
+
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/349381/21577699/5808138c-cf5c-11e6-84fc-787bc59ac274.jpg"/ >
+</p>
