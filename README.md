@@ -7,12 +7,12 @@ fabPack is also ideal to build a packages library.
 
 **fabPack** is based on the Force.com Migration Toolkit hence relies on the latest JDK to be installed properly to be able to call ANT's jar.
 
-<p align="center">
-<img src="https://cloud.githubusercontent.com/assets/349381/21577699/5808138c-cf5c-11e6-84fc-787bc59ac274.jpg"/ >
-</p>
-
 >**fabPack** saves time and reduces risk of manual mistakes. I'm recommending it to any Salesforce implementation teams dealing with lot of packaging work or willing to build a code library.  
 >
 > *Ben N, Senior Salesforce Developer*
 
 Find more details at https://github.com/fcathala/fabPack/wiki
+
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/349381/21577699/5808138c-cf5c-11e6-84fc-787bc59ac274.jpg"/ >
+</p>
