@@ -2,7 +2,7 @@
 	Cls
 	Echo.
 	Echo ==========================================================
-	Echo =             Select a command                           =
+	Echo =             Select an operation                        =
 	Echo ==========================================================
 	Echo %BREADCRUMB%
 	Echo ==========================================================
@@ -33,32 +33,32 @@
 	Goto End
 
 :Menu1
-	Set ACTION=Metadata
+	Set OPERATION=Metadata
 	Set NEXT=CONTINUE
 	Goto End
 
 :Menu2
-	Set ACTION=RetrievePKG
+	Set OPERATION=RetrievePKG
 	Set NEXT=CONTINUE
 	Goto End
 
 :Menu3
-	Set ACTION=RetrieveXML
+	Set OPERATION=RetrieveXML
 	Set NEXT=CONTINUE
 	Goto End
 
 :Menu4
-	Set ACTION=CheckOnly
+	Set OPERATION=CheckOnly
 	Set NEXT=CONTINUE
 	Goto End
 
 :Menu5
-	Set ACTION=Deploy
+	Set OPERATION=Deploy
 	Set NEXT=CONTINUE
 	Goto End
 
 :Menu6
-	Set ACTION=Undeploy
+	Set OPERATION=Undeploy
 	Set NEXT=CONTINUE
 	Goto End
 

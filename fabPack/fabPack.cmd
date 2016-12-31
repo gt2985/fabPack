@@ -15,7 +15,7 @@ REM ===============================================================
 
 	REM © Fabrice Cathala - 14 May 2016
 	Set Version=1.1
-	Set ReleaseDate=2016-11-09
+	Set ReleaseDate=16-11-09
 REM ===============================================================
 
 REM ===============================================================
@@ -24,7 +24,7 @@ REM ===============================================================
 	REM Set UI theme color
 	COLOR 0A
 	REM Folders structure
-	REM Only change if you have an amazing reason for doing so
+	REM Only change if you have an amazing reason to do so
 	REM fabPack install directory
 	Set FPK=%CD%
 	REM Source directory
@@ -41,12 +41,12 @@ REM ===============================================================
 
 :Command
 	Set BREADCRUMB=}
-	CALL "%SYS%\menu_command.cmd"
+	CALL "%SYS%\menu_operation.cmd"
 	IF "%NEXT%"=="ACTION" GOTO Action
 	IF "%NEXT%"=="QUIT" GOTO End
 
 :Org
-	Set BREADCRUMB=} %ACTION%
+	Set BREADCRUMB=} %OPERATION%
 	REM Init values for the current project
 	CALL "%PRJ%\orgs.cmd"
 	REM Select an org
@@ -56,14 +56,14 @@ REM ===============================================================
 	IF "%NEXT%"=="QUIT" GOTO End
 
 :Package
-	Set BREADCRUMB=} %ACTION% } %ORG%
+	Set BREADCRUMB=} %OPERATION% } %ORG%
 	REM Init values for the current project
 	CALL "%PRJ%\packages.cmd"
 	REM Select a package
 	CALL "%SYS%\menu_package.cmd"
 	IF "%NEXT%"=="BACK" GOTO Org
 	IF "%NEXT%"=="QUIT" GOTO End
-	Set BREADCRUMB=} %ACTION% } %ORG% } %PKG%
+	Set BREADCRUMB=} %OPERATION% } %ORG% } %PKG%
 
 REM ===============================================================
 
