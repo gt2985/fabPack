@@ -1,0 +1,5 @@
+You can either store several version of the same package as it changes day after day during development cycle.
+Or you can also use it to store a library of packages to be re-used in future projects.
+
+>> Either way, don't forget to rename the package's folder name after each download,
+>> to be sure it won't be overwritten at the next download...
