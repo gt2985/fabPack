@@ -1,4 +1,4 @@
-#<img src="https://raw.githubusercontent.com/fcathala/fabPack/master/docs/images/fabPack-icon.png"/>fabPack
+#<img src="https://raw.githubusercontent.com/fcathala/fabPack/master/docs/images/fabPack-icon.png"/> fabPack
 
 Packaging Utility for Salesforce Professionals - Fabrice Cathala - 14 May 2016
 
