@@ -1,5 +1,3 @@
-
-
 @Set DEBUG=OFF
 @Echo %DEBUG%
 
@@ -14,8 +12,8 @@ REM ===============================================================
 	REM It saves you time and reduces risk of manual mistakes.
 
 	REM © Fabrice Cathala - 14 May 2016
-	Set Version=1.1
-	Set ReleaseDate=16-11-09
+	Set Version=1.2
+	Set ReleaseDate=24-Mar-17
 REM ===============================================================
 
 REM ===============================================================
@@ -30,11 +28,11 @@ REM ===============================================================
 	REM Source directory
 	Set SRC=%FPK%\src	
 	REM Project settings directory
-	Set PRJ=%FPK%\bin
+	Set PRJ=%FPK%\settings
+	REM Logs directory
+	Set LOG=%FPK%\logs
 	REM System directory
 	Set SYS=%FPK%\bin\sys
-	REM Logs directory
-	Set LOG=%FPK%\bin\logs
 	REM Force.com Migration Tool directory
 	Set ANT=%FPK%\bin\ant
 REM ===============================================================
