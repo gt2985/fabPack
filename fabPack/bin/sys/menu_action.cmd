@@ -40,9 +40,9 @@ REM ===============================================================
 
 REM ===============================================================
 :CheckOnly
-	IF EXIST "%LOG%\check-%NUM%.log" Del "%LOG%\check-%NUM%.log"
-	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" -Dsf.dir="%FPK%" -Dsf.usr=%USR% -Dsf.pwd=%PWD% -Dsf.url=%URL% -logfile "%LOG%\check-%NUM%.log" checkOnly
-	Type "%LOG%\check-%NUM%.log"
+	IF EXIST "%LOG%\check.log" Del "%LOG%\check.log"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" -Dsf.dir="%FPK%" -Dsf.usr=%USR% -Dsf.pwd=%PWD% -Dsf.url=%URL% -logfile "%LOG%\check.log" checkOnly
+	Type "%LOG%\check.log"
 	Echo.
 	PAUSE
 	GOTO End
@@ -50,9 +50,9 @@ REM ===============================================================
 
 REM ===============================================================
 :Deploy
-	IF EXIST "%LOG%\deploy-%NUM%.log" Del "%LOG%\deploy-%NUM%.log"
-	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" -Dsf.dir="%FPK%" -Dsf.usr=%USR% -Dsf.pwd=%PWD% -Dsf.url=%URL% -logfile "%LOG%\deploy-%NUM%.log" deploy
-	Type "%LOG%\deploy-%NUM%.log"
+	IF EXIST "%LOG%\deploy.log" Del "%LOG%\deploy.log"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" -Dsf.dir="%FPK%" -Dsf.usr=%USR% -Dsf.pwd=%PWD% -Dsf.url=%URL% -logfile "%LOG%\deploy.log" deploy
+	Type "%LOG%\deploy.log"
 	Echo.
 	PAUSE
 	GOTO End
