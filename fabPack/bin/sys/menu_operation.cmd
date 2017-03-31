@@ -6,14 +6,20 @@
 	Echo ==========================================================
 	Echo %BREADCRUMB%
 	Echo ==========================================================
-	Echo - 1 ......... List the metadata components
-	Echo - 2 ......... Retrieve a package described in Salesforce
-	Echo - 3 ......... Retrieve a package described locally
-	Echo - 4 ......... Simulate a deployment to Salesforce
-	Echo - 5 ......... Deploy the local package to Salesforce
-	Echo - 6 ......... Undeploy components described locally
 	Echo.
-	Echo - Q ......... Quit
+	Echo - 1 ... List the metadata components
+	Echo.
+	Echo - 2 ... Retrieve a package described in Salesforce
+	Echo.
+	Echo - 3 ... Retrieve a package described locally
+	Echo.
+	Echo - 4 ... Simulate a deployment to Salesforce
+	Echo.
+	Echo - 5 ... Deploy the local package to Salesforce
+	Echo.
+	Echo - 6 ... Undeploy components described locally
+	Echo.
+	Echo - Q ... Quit
 	Echo.
 	Echo ==========================================================
 

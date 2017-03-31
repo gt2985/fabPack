@@ -6,18 +6,27 @@
 	Echo ==========================================================
 	Echo %BREADCRUMB%
 	Echo ==========================================================
-	Echo - 1 ......... %ORG1%
-	Echo - 2 ......... %ORG2%
-	Echo - 3 ......... %ORG3%
-	Echo - 4 ......... %ORG4%
-	Echo - 5 ......... %ORG5%
-	Echo - 6 ......... %ORG6%
-	Echo - 7 ......... %ORG7%
-	Echo - 8 ......... %ORG8%
-	Echo - 9 ......... %ORG9%
 	Echo.
-	Echo - B ......... Back
-	Echo - Q ......... Quit
+	Echo - 1 ... %ORG1%
+	Echo.
+	Echo - 2 ... %ORG2%
+	Echo.
+	Echo - 3 ... %ORG3%
+	Echo.
+	Echo - 4 ... %ORG4%
+	Echo.
+	Echo - 5 ... %ORG5%
+	Echo.
+	Echo - 6 ... %ORG6%
+	Echo.
+	Echo - 7 ... %ORG7%
+	Echo.
+	Echo - 8 ... %ORG8%
+	Echo.
+	Echo - 9 ... %ORG9%
+	Echo.
+	Echo - B ... Back
+	Echo - Q ... Quit
 	Echo.
 	Echo ==========================================================
 

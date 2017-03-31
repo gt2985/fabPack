@@ -6,18 +6,27 @@
 	Echo ==========================================================
 	Echo %BREADCRUMB%
 	Echo ==========================================================
-	Echo - 1 ......... %PKG1%
-	Echo - 2 ......... %PKG2%
-	Echo - 3 ......... %PKG3%
-	Echo - 4 ......... %PKG4%
-	Echo - 5 ......... %PKG5%
-	Echo - 6 ......... %PKG6% 
-	Echo - 7 ......... %PKG7%
-	Echo - 8 ......... %PKG8%
-	Echo - 9 ......... %PKG9%
 	Echo.
-	Echo - B ......... Back
-	Echo - Q ......... Quit
+	Echo - 1 ... %PKG1%
+	Echo.
+	Echo - 2 ... %PKG2%
+	Echo.
+	Echo - 3 ... %PKG3%
+	Echo.
+	Echo - 4 ... %PKG4%
+	Echo.
+	Echo - 5 ... %PKG5%
+	Echo.
+	Echo - 6 ... %PKG6% 
+	Echo.
+	Echo - 7 ... %PKG7%
+	Echo.
+	Echo - 8 ... %PKG8%
+	Echo.
+	Echo - 9 ... %PKG9%
+	Echo.
+	Echo - B ... Back
+	Echo - Q ... Quit
 	Echo.
 	Echo ==========================================================
 
