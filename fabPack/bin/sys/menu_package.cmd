@@ -19,14 +19,9 @@
 	Echo.
 	Echo - 6 ... %PKG6% 
 	Echo.
-	Echo - 7 ... %PKG7%
-	Echo.
-	Echo - 8 ... %PKG8%
-	Echo.
-	Echo - 9 ... %PKG9%
+	Echo - Q ... Quit
 	Echo.
 	Echo - B ... Back
-	Echo - Q ... Quit
 	Echo.
 	Echo ==========================================================
 
@@ -47,11 +42,6 @@
 	If '%Selection%'=='9' GOTO Menu9
 	If /I '%Selection%'=='B' GOTO Back
 	If /I '%Selection%'=='Q' GOTO Quit
-	Goto End
-
-:Menu0
-	Set PKG=%PKG0%
-	Set NEXT=ACTION
 	Goto End
 
 :Menu1
@@ -81,21 +71,6 @@
 
 :Menu6
 	Set PKG=%PKG6%
-	Set NEXT=ACTION
-	Goto End
-
-:Menu7
-	Set PKG=%PKG7%
-	Set NEXT=ACTION
-	Goto End
-
-:Menu8
-	Set PKG=%PKG8%
-	Set NEXT=ACTION
-	Goto End
-
-:Menu9
-	Set PKG=%PKG9%
 	Set NEXT=ACTION
 	Goto End
 

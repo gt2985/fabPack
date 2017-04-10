@@ -39,19 +39,4 @@ REM ===============================================================
 	Set USR6=
 	Set PWD6=
 	Set URL6=
-
-	Set ORG7=
-	Set USR7=
-	Set PWD7=
-	Set URL7=
-
-	Set ORG8=
-	Set USR8=
-	Set PWD8=
-	Set URL8=
-
-	Set ORG9=
-	Set USR9=
-	Set PWD9=
-	Set URL9=
 REM ===============================================================

@@ -19,14 +19,9 @@
 	Echo.
 	Echo - 6 ... %ORG6%
 	Echo.
-	Echo - 7 ... %ORG7%
-	Echo.
-	Echo - 8 ... %ORG8%
-	Echo.
-	Echo - 9 ... %ORG9%
+	Echo - Q ... Quit
 	Echo.
 	Echo - B ... Back
-	Echo - Q ... Quit
 	Echo.
 	Echo ==========================================================
 
@@ -49,18 +44,15 @@
 	If /I '%Selection%'=='Q' GOTO Quit
 	Goto End
 
-:Menu0
-	Set ORG=%ORG0%
-	Set USR=%USR0%
-	Set PWD=%PWD0%
-	Set URL=%URL0%
-	Goto End
-
 :Menu1
 	Set ORG=%ORG1%
 	Set USR=%USR1%
 	Set PWD=%PWD1%
 	Set URL=%URL1%
+
+	Set NEXT=CONTINUE
+	REM Skip next Menu if no more parameter is required
+	IF NOT "%OPERATION%"=="RetrievePKG" Set NEXT=ACTION
 	Goto End
 
 :Menu2
@@ -68,6 +60,10 @@
 	Set USR=%USR2%
 	Set PWD=%PWD2%
 	Set URL=%URL2%
+
+	Set NEXT=CONTINUE
+	REM Skip next Menu if no more parameter is required
+	IF NOT "%OPERATION%"=="RetrievePKG" Set NEXT=ACTION
 	Goto End
 
 :Menu3
@@ -75,6 +71,10 @@
 	Set USR=%USR3%
 	Set PWD=%PWD3%
 	Set URL=%URL3%
+
+	Set NEXT=CONTINUE
+	REM Skip next Menu if no more parameter is required
+	IF NOT "%OPERATION%"=="RetrievePKG" Set NEXT=ACTION
 	Goto End
 
 :Menu4
@@ -82,6 +82,10 @@
 	Set USR=%USR4%
 	Set PWD=%PWD4%
 	Set URL=%URL4%
+
+	Set NEXT=CONTINUE
+	REM Skip next Menu if no more parameter is required
+	IF NOT "%OPERATION%"=="RetrievePKG" Set NEXT=ACTION
 	Goto End
 
 :Menu5
@@ -89,6 +93,10 @@
 	Set USR=%USR5%
 	Set PWD=%PWD5%
 	Set URL=%URL5%
+
+	Set NEXT=CONTINUE
+	REM Skip next Menu if no more parameter is required
+	IF NOT "%OPERATION%"=="RetrievePKG" Set NEXT=ACTION
 	Goto End
 
 :Menu6
@@ -96,27 +104,10 @@
 	Set USR=%USR6%
 	Set PWD=%PWD6%
 	Set URL=%URL6%
-	Goto End
 
-:Menu7
-	Set ORG=%ORG7%
-	Set USR=%USR7%
-	Set PWD=%PWD7%
-	Set URL=%URL7%
-	Goto End
-
-:Menu8
-	Set ORG=%ORG8%
-	Set USR=%USR8%
-	Set PWD=%PWD8%
-	Set URL=%URL8%
-	Goto End
-
-:Menu9
-	Set ORG=%ORG9%
-	Set USR=%USR9%
-	Set PWD=%PWD9%
-	Set URL=%URL9%
+	Set NEXT=CONTINUE
+	REM Skip next Menu if no more parameter is required
+	IF NOT "%OPERATION%"=="RetrievePKG" Set NEXT=ACTION
 	Goto End
 
 :Back
@@ -128,7 +119,3 @@
 	Goto End
 
 :End
-
-REM Set end of Menu if no more parameter is required
-Set NEXT=ACTION
-IF "%OPERATION%"=="RetrievePKG" Set NEXT=CONTINUE
