@@ -1,11 +1,12 @@
 :Start
 	Cls
 	Echo.
-	Echo ==========================================================
-	Echo =             Select a package                           =
-	Echo ==========================================================
+	Echo - fabPack - Packaging Utility for Salesforce Professionals -
+	Echo ------------------------------------------------------------
 	Echo %BREADCRUMB%
-	Echo ==========================================================
+	Echo ------------------------------------------------------------
+	Echo.
+	Echo Please select a package
 	Echo.
 	Echo - 1 ... %PKG1%
 	Echo.
@@ -19,11 +20,10 @@
 	Echo.
 	Echo - 6 ... %PKG6% 
 	Echo.
-	Echo - Q ... Quit
 	Echo.
-	Echo - B ... Back
+	Echo - Q ... Quit / B ... Back
 	Echo.
-	Echo ==========================================================
+	Echo ------------------------------------------------------------
 
 	Set Selection=
 	Echo Type your selection and PRESS ENTER

@@ -21,7 +21,7 @@ REM ===============================================================
 	Set URL2=https://test.salesforce.com
 
 	Set ORG3=Dev Org
-	Set USR3=me@test.com
+	Set USR3=me@my.playground.com
 	Set PWD3=Password456!4568123bYloLJEwerty2ZiaBc
 	Set URL3=https://login.salesforce.com
 

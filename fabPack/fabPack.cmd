@@ -1,36 +1,44 @@
 @Set DEBUG=OFF
 @Echo %DEBUG%
 
-
 REM ===============================================================
 	REM	fabPack: Packaging Utility
 
 	REM fabPack lets you download packages from one Salesforce org 
 	REM and upload it into another one. It also helps you capture
 	REM metadata and build-up a library.
-	REM It's an ANT wrapper.
-	REM It saves you time and reduces risk of manual mistakes.
+	REM It's a Salesforce Migration Toolkit wrapper, so you need
+	REM both the Java and Ant stacks installed before using it. 
+	REM fabPack saves time and reduces risk of manual mistakes.
 
 	REM © Fabrice Cathala - 14 May 2016
-	Set Version=1.2
-	Set ReleaseDate=24-Mar-17
+	Set Version=1.3
+	Set ReleaseDate=10-June-17
 REM ===============================================================
 
 REM ===============================================================
 	REM Initialisation
 
 	REM Set UI theme color
-	COLOR 0A
+	COLOR 0B
 	REM Folders structure
 	REM Only change if you have an amazing reason to do so
 	REM fabPack install directory
 	Set FPK=%CD%
-	REM Source directory
-	Set SRC=%FPK%\src	
 	REM Project settings directory
-	Set PRJ=%FPK%\settings
+	Set STG=%FPK%\settings
+	REM Components to be deleted directory
+	Set ARC=%FPK%\archives
+	REM Components to be deleted directory
+	Set DEL=%FPK%\files\delete
 	REM Logs directory
-	Set LOG=%FPK%\logs
+	Set LOG=%FPK%\files\log
+	REM Metadata list directory
+	Set DSC=%FPK%\files\describe
+	REM Retrieve components list directory
+	Set RTV=%FPK%\files\retrieve
+	REM Source directory
+	Set SRC=%FPK%\files\src
 	REM System directory
 	Set SYS=%FPK%\bin\sys
 	REM Force.com Migration Tool directory
@@ -38,15 +46,15 @@ REM ===============================================================
 REM ===============================================================
 
 :Command
-	Set BREADCRUMB=}
+	Set BREADCRUMB=} Home }
 	CALL "%SYS%\menu_operation.cmd"
 	IF "%NEXT%"=="ACTION" GOTO Action
 	IF "%NEXT%"=="QUIT" GOTO End
 
 :Org
-	Set BREADCRUMB=} %OPERATION%
+	Set BREADCRUMB=} Home } %OPERATION%
 	REM Init values for the current project
-	CALL "%PRJ%\orgs.cmd"
+	CALL "%STG%\orgs.cmd"
 	REM Select an org
 	CALL "%SYS%\menu_org.cmd"
 	IF "%NEXT%"=="ACTION" GOTO Action
@@ -54,14 +62,14 @@ REM ===============================================================
 	IF "%NEXT%"=="QUIT" GOTO End
 
 :Package
-	Set BREADCRUMB=} %OPERATION% } %ORG%
+	Set BREADCRUMB=} Home } %OPERATION% } %ORG%
 	REM Init values for the current project
-	CALL "%PRJ%\packages.cmd"
+	CALL "%STG%\packages-org%ONB%.cmd"
 	REM Select a package
 	CALL "%SYS%\menu_package.cmd"
 	IF "%NEXT%"=="BACK" GOTO Org
 	IF "%NEXT%"=="QUIT" GOTO End
-	Set BREADCRUMB=} %OPERATION% } %ORG% } %PKG%
+	Set BREADCRUMB=} Home } %OPERATION% } %ORG% } %PKG%
 
 REM ===============================================================
 

@@ -1,11 +1,12 @@
 :Start
 	Cls
 	Echo.
-	Echo ==========================================================
-	Echo =             Select an organisation                     =
-	Echo ==========================================================
+	Echo - fabPack - Packaging Utility for Salesforce Professionals -
+	Echo ------------------------------------------------------------
 	Echo %BREADCRUMB%
-	Echo ==========================================================
+	Echo ------------------------------------------------------------
+	Echo.
+	Echo Please select an organisation
 	Echo.
 	Echo - 1 ... %ORG1%
 	Echo.
@@ -19,15 +20,13 @@
 	Echo.
 	Echo - 6 ... %ORG6%
 	Echo.
-	Echo - Q ... Quit
 	Echo.
-	Echo - B ... Back
+	Echo - Q ... Quit / B ... Back
 	Echo.
-	Echo ==========================================================
+	Echo ------------------------------------------------------------
 
 	Set Selection=
 	Echo Type your selection and PRESS ENTER
-	Echo.
 	Set /P Selection=
 	If NOT '%Selection%'=='' SET Selection=%Selection:~0,1%
 	If '%Selection%'==''  GOTO Start
@@ -45,6 +44,7 @@
 	Goto End
 
 :Menu1
+	Set ONB=1
 	Set ORG=%ORG1%
 	Set USR=%USR1%
 	Set PWD=%PWD1%
@@ -56,6 +56,7 @@
 	Goto End
 
 :Menu2
+	Set ONB=2
 	Set ORG=%ORG2%
 	Set USR=%USR2%
 	Set PWD=%PWD2%
@@ -67,6 +68,7 @@
 	Goto End
 
 :Menu3
+	Set ONB=3
 	Set ORG=%ORG3%
 	Set USR=%USR3%
 	Set PWD=%PWD3%
@@ -78,6 +80,7 @@
 	Goto End
 
 :Menu4
+	Set ONB=4
 	Set ORG=%ORG4%
 	Set USR=%USR4%
 	Set PWD=%PWD4%
@@ -89,6 +92,7 @@
 	Goto End
 
 :Menu5
+	Set ONB=5
 	Set ORG=%ORG5%
 	Set USR=%USR5%
 	Set PWD=%PWD5%
@@ -100,6 +104,7 @@
 	Goto End
 
 :Menu6
+	Set ONB=6
 	Set ORG=%ORG6%
 	Set USR=%USR6%
 	Set PWD=%PWD6%

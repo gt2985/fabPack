@@ -1,17 +1,30 @@
 :Start
 	Cls
 	Echo.
-	Echo ==========================================================
-	Echo =             Command in progress...                     =
-	Echo ==========================================================
+	Echo - fabPack - Packaging Utility for Salesforce Professionals -
+	Echo ------------------------------------------------------------
 	Echo %BREADCRUMB%
-	Echo ==========================================================
+	Echo ------------------------------------------------------------
 	Echo.
+	Echo Command in Progress
+
 	Goto %OPERATION%
 
 REM ===============================================================
-:Metadata
-	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" -Dsf.dir="%FPK%"
+:Describe
+	REM Run the task
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" cleanup -Ddir="%LOG%"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" describe -Ddir="%DSC%" -logfile "%LOG%\describe.log" -Dsf.usr=%USR% -Dsf.pwd=%PWD% -Dsf.url=%URL%
+
+	REM Take a versioned snapshot and store in folder "archives" 
+	CALL "%SYS%\c1\get.cmd"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" archive -Dsrc="%DSC%" -Ddst="%ARC%\%COUNTER%-describe"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" archive -Dsrc="%LOG%" -Ddst="%ARC%\%COUNTER%-describe\log"
+	CALL "%SYS%\c1\inc.cmd"
+
+	REM Execution result
+	Echo ------------------------------------------------------------
+	Type "%LOG%\describe.log"
 	Echo.
 	PAUSE
 	GOTO End
@@ -19,10 +32,19 @@ REM ===============================================================
 
 REM ===============================================================
 :RetrievePKG
-	IF EXIST "%LOG%\retrieve-PKG.log" Del "%LOG%\retrieve-PKG.log"
-	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" -Dsf.dir="%FPK%" -Dsf.usr=%USR% -Dsf.pwd=%PWD% -Dsf.url=%URL% -Dsf.pkg=%PKG% -logfile "%LOG%\retrieve-PKG.log" retrievePKG
-	Type "%LOG%\retrieve-PKG.log"
-	Xcopy "%FPK%\src\*.*" "%FPK%\archives\src-%PKG%\" /v /s /q /y
+	REM Run the task
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" cleanup -Ddir="%LOG%"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" retrievePKG -Ddir="%SRC%" -Dsf.pkg=%PKG% -logfile "%LOG%\retrievePKG.log" -Dsf.usr=%USR% -Dsf.pwd=%PWD% -Dsf.url=%URL%
+
+	REM Take a versioned snapshot and store in folder "archives" 
+	CALL "%SYS%\c1\get.cmd"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" archive -Dsrc="%SRC%" -Ddst="%ARC%\%COUNTER%-retrievePKG-%PKG%"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" archive -Dsrc="%LOG%" -Ddst="%ARC%\%COUNTER%-retrievePKG-%PKG%\log"
+	CALL "%SYS%\c1\inc.cmd"
+
+	REM Execution result
+	Echo ------------------------------------------------------------
+	Type "%LOG%\retrievePKG.log"
 	Echo.
 	PAUSE
 	GOTO End
@@ -30,9 +52,19 @@ REM ===============================================================
 
 REM ===============================================================
 :RetrieveXML
-	IF EXIST "%LOG%\retrieve-XML.log" Del "%LOG%\retrieve-XML.log"
-	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" -Dsf.dir="%FPK%" -Dsf.usr=%USR% -Dsf.pwd=%PWD% -Dsf.url=%URL% -logfile "%LOG%\retrieve-XML.log" retrieveXML
-	Type "%LOG%\retrieve-XML.log"
+	REM Run the task
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" cleanup -Ddir="%LOG%"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" retrieveXML -Ddir="%SRC%" -Dxml="%RTV%\package.xml" -logfile "%LOG%\retrieveXML.log" -Dsf.usr=%USR% -Dsf.pwd=%PWD% -Dsf.url=%URL%
+
+	REM Take a versioned snapshot and store in folder "archives" 
+	CALL "%SYS%\c1\get.cmd"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" archive -Dsrc="%SRC%" -Ddst="%ARC%\%COUNTER%-retrieveXML"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" archive -Dsrc="%LOG%" -Ddst="%ARC%\%COUNTER%-retrieveXML\log"
+	CALL "%SYS%\c1\inc.cmd"
+
+	REM Execution result
+	Echo ------------------------------------------------------------
+	Type "%LOG%\retrieveXML.log"
 	Echo.
 	PAUSE
 	GOTO End
@@ -40,9 +72,18 @@ REM ===============================================================
 
 REM ===============================================================
 :CheckOnly
-	IF EXIST "%LOG%\check.log" Del "%LOG%\check.log"
-	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" -Dsf.dir="%FPK%" -Dsf.usr=%USR% -Dsf.pwd=%PWD% -Dsf.url=%URL% -logfile "%LOG%\check.log" checkOnly
-	Type "%LOG%\check.log"
+	REM Run the task
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" cleanup -Ddir="%LOG%"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" checkOnly -Ddir="%SRC%" -logfile "%LOG%\checkOnly.log" -Dsf.usr=%USR% -Dsf.pwd=%PWD% -Dsf.url=%URL%
+
+	REM Take a versioned snapshot and store in folder "archives" 
+	CALL "%SYS%\c1\get.cmd"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" archive -Dsrc="%LOG%" -Ddst="%ARC%\%COUNTER%-checkOnly\log"
+	CALL "%SYS%\c1\inc.cmd"
+
+	REM Execution result
+	Echo ------------------------------------------------------------
+	Type "%LOG%\checkOnly.log"
 	Echo.
 	PAUSE
 	GOTO End
@@ -50,8 +91,17 @@ REM ===============================================================
 
 REM ===============================================================
 :Deploy
-	IF EXIST "%LOG%\deploy.log" Del "%LOG%\deploy.log"
-	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" -Dsf.dir="%FPK%" -Dsf.usr=%USR% -Dsf.pwd=%PWD% -Dsf.url=%URL% -logfile "%LOG%\deploy.log" deploy
+	REM Run the task
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" cleanup -Ddir="%LOG%"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" deploy -Ddir="%SRC%" -logfile "%LOG%\deploy.log" -Dsf.usr=%USR% -Dsf.pwd=%PWD% -Dsf.url=%URL%
+
+	REM Take a versioned snapshot and store in folder "archives"
+	CALL "%SYS%\c1\get.cmd"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" archive -Dsrc="%LOG%" -Ddst="%ARC%\%COUNTER%-deploy\log"
+	CALL "%SYS%\c1\inc.cmd"
+
+	REM Execution result
+	Echo ------------------------------------------------------------
 	Type "%LOG%\deploy.log"
 	Echo.
 	PAUSE
@@ -59,8 +109,19 @@ REM ===============================================================
 REM ===============================================================
 
 REM ===============================================================
-:Undeploy
-	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" undeploy
+:Delete
+	REM Run the task
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" cleanup -Ddir="%LOG%"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" delete -Ddir="%DEL%" -logfile "%LOG%\delete.log" -Dsf.usr=%USR% -Dsf.pwd=%PWD% -Dsf.url=%URL%
+
+	REM Take a versioned snapshot and store in folder "archives" 
+	CALL "%SYS%\c1\get.cmd"
+	CALL %ANT_HOME%\bin\ant.bat -buildfile "%ANT%" archive -Dsrc="%LOG%" -Ddst="%ARC%\%COUNTER%-delete\log"
+	CALL "%SYS%\c1\inc.cmd"
+
+	REM Execution result
+	Echo ------------------------------------------------------------
+	Type "%LOG%\delete.log"
 	Echo.
 	PAUSE
 	GOTO End
