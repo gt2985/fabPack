@@ -20,7 +20,7 @@ REM ===============================================================
 	REM Initialisation
 
 	REM Set UI theme color
-	COLOR 0B
+	COLOR 0A
 	REM Folders structure
 	REM Only change if you have an amazing reason to do so
 	REM fabPack install directory
