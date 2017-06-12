@@ -1,4 +1,4 @@
-# <img src="https://cloud.githubusercontent.com/assets/349381/21577558/dda8eeae-cf56-11e6-8198-abc0ce0d2a27.png"/> fabPack
+# <img src="https://user-images.githubusercontent.com/349381/27057313-893cd96e-4fc3-11e7-856f-cb52f668384e.png"/> fabPack
 
 *Packaging Utility for Salesforce Professionals - Fabrice Cathala - 14 May 2016*
 
@@ -16,5 +16,5 @@ fabPack is also ideal to build a packages library.
 Find more details at https://github.com/fcathala/fabPack/wiki
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/349381/27013915-0ee8bfcc-4ee5-11e7-9c1e-a833c7aacd71.png"/ >
+<img src="https://user-images.githubusercontent.com/349381/27057206-07f9e8e2-4fc3-11e7-978e-b183e88ecc4e.png"/ >
 </p>
