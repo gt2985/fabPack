@@ -4,16 +4,16 @@
 REM ===============================================================
 	REM	fabPack: Packaging Utility
 
-	REM fabPack lets you download packages from one Salesforce org 
+	REM fabPack lets you download packages from one Salesforce org
 	REM and upload it into another one. It also helps you capture
 	REM metadata and build-up a library.
 	REM It's a Salesforce Migration Toolkit wrapper, so you need
-	REM both the Java and Ant stacks installed before using it. 
+	REM both the Java and Ant stacks installed before using it.
 	REM fabPack saves time and reduces risk of manual mistakes.
 
 	REM © Fabrice Cathala - 14 May 2016
-	Set Version=1.3
-	Set ReleaseDate=10-June-17
+	Set Version=1.0
+	Set ReleaseDate=30-July-17
 REM ===============================================================
 
 REM ===============================================================
