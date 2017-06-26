@@ -2,10 +2,10 @@
 <project xmlns:sf="antlib:com.salesforce" name="fabPack Build Process" default="list" >
   <!-- fabPack - Ant Migration Tool build.xml -->
 
-	<description>
-	Contains all operations currently supported by fabPack's user interface.
-	Fabrice Cathala - 10-June-17
-	</description>
+  <description>
+  Contains all operations currently supported by fabPack's user interface.
+  Fabrice Cathala - 10-June-17
+  </description>
 
   <property file="build.properties"/>
   <property environment="env"/>
@@ -34,72 +34,72 @@
 
   <!-- Retrieve information on all supported metadata type -->
   <target name="describe">
-    <delete dir="${dir}"/>
-    <mkdir dir="${dir}"/>
+    <antcall target="cleanup">
+    </antcall>
     <sf:describeMetadata
-    	username="${sf.usr}"
-    	password="${sf.pwd}"
-    	serverurl="${sf.url}"
-    	resultFilePath="${dir}\describe.metadata" 
-      />
+      username="${sf.usr}"
+      password="${sf.pwd}"
+      serverurl="${sf.url}"
+      resultFilePath="${dir}\describe.metadata" 
+    />
   </target>
 
   <!-- Retrieve the components listed in Salesforce package ${sf.pkg} -->
   <target name="retrievePKG">
-    <delete dir="${dir}"/>
-    <mkdir dir="${dir}"/>
+    <antcall target="cleanup">
+    </antcall>
     <sf:retrieve
-    	username="${sf.usr}"
-    	password="${sf.pwd}"
-    	serverurl="${sf.url}"
-    	retrieveTarget="${dir}"
-    	packageNames="${sf.pkg}"
-    	singlePackage="true" 
+      username="${sf.usr}"
+      password="${sf.pwd}"
+      serverurl="${sf.url}"
+      retrieveTarget="${dir}"
+      packageNames="${sf.pkg}"
+      singlePackage="true" 
       maxPoll="${sf.maxPoll}"
       pollWaitMillis="${sf.pollWaitMillis}"
-      />
+    />
   </target>
 
   <!-- Retrieve the components listed in manifest file ${xml} -->
   <target name="retrieveXML">
-    <delete dir="${dir}"/>
-    <mkdir dir="${dir}"/>
+    <antcall target="cleanup">
+    </antcall>
     <sf:retrieve
-    	username="${sf.usr}"
-    	password="${sf.pwd}"
-    	serverurl="${sf.url}"
+      username="${sf.usr}"
+      password="${sf.pwd}"
+      serverurl="${sf.url}"
       retrieveTarget="${dir}"
       unpackaged="${xml}"
-    	maxPoll="${sf.maxPoll}"
+      maxPoll="${sf.maxPoll}"
       pollWaitMillis="${sf.pollWaitMillis}"
-      />
+    />
   </target>
 
-	<!-- Validate the set of metadata stored in ${dir} -->
-	<target name="checkOnly">
-	  <sf:deploy
-      	username="${sf.usr}"
-      	password="${sf.pwd}"
-      	serverurl="${sf.url}"
-        deployRoot="${dir}"
-        checkOnly="true"
-        rollbackOnError="true"
-      	maxPoll="${sf.maxPoll}"
-        pollWaitMillis="${sf.pollWaitMillis}"
-        />
-	</target>
+  <!-- Validate the set of metadata stored in ${dir} -->
+  <target name="checkOnly">
+    <sf:deploy
+      username="${sf.usr}"
+      password="${sf.pwd}"
+      serverurl="${sf.url}"
+      deployRoot="${dir}"
+      checkOnly="true"
+      rollbackOnError="true"
+      maxPoll="${sf.maxPoll}"
+      pollWaitMillis="${sf.pollWaitMillis}"
+     />
+  </target>
 
   <!-- Deploy the set of metadata stored in ${dir} (run tests) -->
   <target name="deploy">
     <sf:deploy
-    	username="${sf.usr}"
-    	password="${sf.pwd}"
-    	serverurl="${sf.url}"
+      username="${sf.usr}"
+      password="${sf.pwd}"
+      serverurl="${sf.url}"
       deployRoot="${dir}"
       rollbackOnError="true"
-    	maxPoll="${sf.maxPoll}"
+      maxPoll="${sf.maxPoll}"
       pollWaitMillis="${sf.pollWaitMillis}"
-      />
+    />
   </target>
 
   <!-- Undeploy components                              -->
@@ -107,13 +107,13 @@
   <!-- https://goo.gl/1fC5uZ                            -->
   <target name="delete">
     <sf:deploy
-    	username="${sf.usr}"
-    	password="${sf.pwd}"
-    	serverurl="${sf.url}"
+      username="${sf.usr}"
+      password="${sf.pwd}"
+      serverurl="${sf.url}"
       deployRoot="${dir}"
-    	maxPoll="${sf.maxPoll}"
+      maxPoll="${sf.maxPoll}"
       pollWaitMillis="${sf.pollWaitMillis}"
-      />
+    />
   </target>
 
 </project>
