@@ -4,3 +4,6 @@ desktop.ini
 # Subblime project files
 *.sublime-project
 *.sublime-workspace
+
+# Credentials and actual change sets names
+fabPack\settings\*
