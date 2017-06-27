@@ -6,4 +6,4 @@ desktop.ini
 *.sublime-workspace
 
 # Credentials and actual change sets names
-/fabPack/settings/*
+fabPack/settings/
