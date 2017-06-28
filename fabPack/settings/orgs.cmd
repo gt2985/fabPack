@@ -22,7 +22,7 @@ REM ===============================================================
 
 	Set ORG3=Dev Org
 	Set USR3=me@my.playground.com
-	Set PWD3=Password456!4568123bYloLJEwerty2ZiaBc
+	Set PWD3=Password456!45a8123bYloLJEwerty2ZiaBc
 	Set URL3=https://login.salesforce.com
 
 	Set ORG4=

@@ -5,5 +5,5 @@ desktop.ini
 *.sublime-project
 *.sublime-workspace
 
-# Credentials and actual change sets names
-fabPack/settings/
+# Credentials and change sets names
+fabPack/settings/*.cmd
