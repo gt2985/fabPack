@@ -16,5 +16,5 @@ fabPack is also ideal to build a packages library.
 Find more details at https://github.com/fcathala/fabPack/wiki
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/349381/27057206-07f9e8e2-4fc3-11e7-978e-b183e88ecc4e.png"/ >
+<img src="https://user-images.githubusercontent.com/349381/27662121-838b71c2-5c54-11e7-9517-32a3c88b06b7.png"/>
 </p>
