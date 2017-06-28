@@ -12,7 +12,7 @@ REM ===============================================================
 REM ===============================================================
 	Set ORG1=Production
 	Set USR1=admin@customer.com
-	Set PWD1=Password123!c9G8ux1YbYloLJE9yLu2ZiePq
+	Set PWD1=Password123!10G8ux1YbYloLJE9yLu2ZiePq
 	Set URL1=https://login.salesforce.com
 
 	Set ORG2=Sandbox
